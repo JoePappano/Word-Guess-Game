@@ -1,0 +1,59 @@
+.header {
+    text-align: center;
+}
+
+.main {
+    font-size: 100px;
+    color: red;
+}
+
+.sports {
+    font-size: 33px;
+    color: green;
+}
+
+.alignment {
+    position: relative;
+    top: 10px;
+}
+
+.scoreboard {
+    position: relative;
+    margin: 0 auto;
+    top: 50px;
+    height: 50px;
+    width: 150px;
+} 
+
+.wins {
+    position: relative;
+    float: left;
+}
+
+.losses {
+    position: relative;
+    float: right;
+}
+
+.word {
+    text-align: center;
+    position: relative;
+    margin: 0 auto;
+    height: 50px;
+    width: 100%;
+    top: 80px;
+}
+
+.guesses {
+    position: relative;
+    margin: 0 auto;
+    height: 150px;
+    width: 100%;
+    top: 150px;
+
+}
+
+.floating {
+    float: left;
+    margin: 0 200px 0 75px;;
+}
