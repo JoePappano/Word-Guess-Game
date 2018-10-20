@@ -5,6 +5,7 @@ var winsValue = 0;
 var lossesValue = 0;
 var lastGuessValue = "";
 var alreadyGuessedValue = [];
+var userInningsRemaining = document.getElementById("inningsRemaining");
 var userLastGuess = document.getElementById("lastGuess");
 var userAlreadyGuessed = document.getElementById("alreadyGuessed");
 var wordsList = ["grandslam", "homerun", "doubleplay", "infieldfly", "ondeck", "pinchhitter", "perfectgame", "nohitter", "dugout", "worldseries"];
@@ -16,24 +17,66 @@ var main = [];
 var mainWordArray = [];
 var mainWordUnderlined = [];
 
-var mainWord = "test";
+var mainWord = "";
 var mainWordU = "";
 
 function pullMainWord() {
-    var newWord = wordsList[Math.floor(Math.random()* wordsListLength)];
+    var newWord = wordsList[Math.floor(Math.random() * wordsListLength)];
     mainWord = newWord;
     document.getElementById("wordToPlay").textContent = mainWord;
     console.log(mainWord);
 }
 
+
 function setUnderline() {
     pullMainWord();
     for (i = 0; i < mainWord.length; i++) {
-        mainWordArray[i] = mainWord.charAt(i);
-        console.log(mainWord.charAt(i));
-        mainWordUnderlined[i] = "_";
-        console.log(mainWordUnderlined[i])
+        mainWordArray.push("_");
     }
-    mainWordU = mainWordUnderlined.join("");
+    mainWordU = mainWordArray.join(" ");
     document.getElementById("wordToPlay").textContent = mainWordU;
 }
+
+document.onkeyup = function (event) {
+    var userGuess = event.key;
+    var mainChanges = 0;
+    var mainChangesTwo = 0;
+    alert("You have selected: " + userGuess)
+    for (i = 0; i < mainWord.length; i++) {
+        lastGuess = 0;
+        if (userGuess == mainWord[i]) {
+            mainWordArray[i] == userGuess;
+            mainWordArray.splice(i, 1, userGuess);
+            mainChanges += 1;
+        }
+    }
+    if (mainChanges === mainChangesTwo) {
+        inningsValue -= 1;
+        console.log(mainChanges)
+        console.log(mainChangesTwo)
+    }
+    alreadyGuessedValue.push(userGuess);
+    userAlreadyGuessed.textContent = "Already Guessed: " + alreadyGuessedValue;
+    userInningsRemaining.textContent = "Innings Remaining: " + inningsValue;
+    userLastGuess.textContent = "Last Guess: " + userGuess;
+    mainWordU = mainWordArray.join(" ");
+    document.getElementById("wordToPlay").textContent = mainWordU;
+
+    if (inningsValue == 0) {
+        alert("That's it folks! Click button to restart!");
+        lossesValue++;
+        document.getElementById("losses").textContent = "Losses: " + lossesValue;
+    }
+
+    
+
+    var mainWordArrayTwo = mainWordArray.join("")
+    
+    if (mainWordArrayTwo === mainWord) {
+        alert("You won!")
+        winsValue++;
+        document.getElementById("wins").textContent = "Wins: " + winsValue;
+    }
+
+}
+
