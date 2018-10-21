@@ -53,7 +53,32 @@
 
 }
 
+/* .alreadyGuessedDiv {
+    height: 200px;
+    width: 100%;
+} */
+
 .floating {
     float: left;
     margin: 0 200px 0 75px;;
+}
+
+/* .floatRight {
+    float: right;
+    margin: 0 200px 0 75px;;
+}
+
+.floatLeft {
+    float: left;
+    margin: 0 200px 0 75px;;
+}
+
+.centerThis {
+    position: relative;
+    margin: 0 auto;
+} */
+
+.buttonPlay {
+    position: relative;
+    margin: 0 auto;
 }
