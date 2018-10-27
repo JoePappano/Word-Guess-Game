@@ -46,10 +46,10 @@ function setUnderline() {
     userAlreadyGuessed.textContent = "Already Guessed: ";
     document.getElementById("playButton").disabled = "true";
 }
-
+// userGuess === "a" || userGuess === "b" || userGuess === "c" || userGuess === "d" || (userGuess === "a" || userGuess === "b" || userGuess === "c" || userGuess === "d" || userGuess === "e" || userGuess === "f" || userGuess === "g" || userGuess === "h" || userGuess === "i" || userGuess === "j" || userGuess === "k" || userGuess === "l" || userGuess === "m" || userGuess === "n" || userGuess === "o" || userGuess === "p" || userGuess === "q" || userGuess === "r" || userGuess === "s" || userGuess === "t" || userGuess === "u" || userGuess === "v" || userGuess === "w" || userGuess === "x" || userGuess === "y" || userGuess === "z"
 document.onkeyup = function (event) {
     var userGuess = event.key;
-    if (userGuess === "a" || userGuess === "b" || userGuess === "c" || userGuess === "d" || userGuess === "e" || userGuess === "f" || userGuess === "g" || userGuess === "h" || userGuess === "i" || userGuess === "j" || userGuess === "k" || userGuess === "l" || userGuess === "m" || userGuess === "n" || userGuess === "o" || userGuess === "p" || userGuess === "q" || userGuess === "r" || userGuess === "s" || userGuess === "t" || userGuess === "u" || userGuess === "v" || userGuess === "w" || userGuess === "x" || userGuess === "y" || userGuess === "z"){
+    if (letterChoices.indexOf(userGuess) !== -1 && alreadyGuessedValue.indexOf(userGuess) === -1) {
         var mainChanges = 0;
         var mainChangesTwo = 0;
         alert("You have selected: " + userGuess)
